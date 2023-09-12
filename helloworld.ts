@@ -13,3 +13,6 @@ type Product = {
   images: string[];
   status: string;
 };
+
+// Challenge: create a type describing this object
+// this time use an enum for the "status" field
