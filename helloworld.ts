@@ -52,6 +52,7 @@ type User = {
   age: number;
   role: UserRole;
 };
+
 function fireUser({ firstName, age, role }: User) {}
 
 // Type the function parameters
@@ -303,3 +304,19 @@ const [names, setNames] = useState<string[]>([]);
 
 
 // Challenge 10: CUSTOM HOOKS with TypeScript
+
+// Challenge 11: Type the EVENT PARAM in the onClick handler
+export function ProductCard() {
+  const onClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    event.preventDefault();
+  };
+
+  return <div onClick={onClick}>Fire this loser!</div>;
+}
+
+export function CreateProductForm() {
+  const [name, setName] = useState("");
+
+  const onChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
+  };
